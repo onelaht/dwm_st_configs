@@ -72,6 +72,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *volup[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *voldown[]  = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *volmute[]  = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
+/* brightness commands */
+static const char *brightup[]   = {"brightnessctl", "set", "5%+", NULL};
+static const char *brightdown[] = {"brightnessctl", "set", "5%-", NULL};
 /* screenshot commands */
 static const char *screenshot[] = { "scrot","-s", "/home/one/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S-sc.jpg", NULL};
 /* command shortcuts */
@@ -83,6 +86,9 @@ static const Key keys[] = {
   { 0,                            XF86XK_AudioLowerVolume,        spawn,          {.v = voldown } },
   { 0,                            XF86XK_AudioRaiseVolume,        spawn,          {.v = volup   } },
   { 0,                            XF86XK_AudioMute,               spawn,          {.v = volmute } },
+  /* brightness keys */
+  { 0,                            XF86XK_MonBrightnessUp,         spawn,          {.v = brightup} },
+  { 0,                            XF86XK_MonBrightnessDown,       spawn,          {.v = brightdown} },
   /* screenshot keys */
 	{ 0,                            XK_Print,                       spawn,          {.v = screenshot} },
   /* bash keys */
