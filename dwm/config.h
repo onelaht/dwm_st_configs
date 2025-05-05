@@ -77,9 +77,9 @@ static const char *brightup[]   = {"brightnessctl", "set", "5%+", NULL};
 static const char *brightdown[] = {"brightnessctl", "set", "5%-", NULL};
 /* screenshot commands */
 static const char *screenshot[] = { "scrot","-s", "/home/one/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S-sc.jpg", NULL};
-/* command shortcuts */
-static const char *launchSC[] = { "/home/one/.dwm/launchsc.sh", NULL}; 
-
+/* custom dmenus */
+static const char *misc_launcher[] = { "/home/one/.dwm/misc_launcher.sh", NULL};
+static const char *options_launcher[] = { "/home/one/.dwm/options_launcher.sh", NULL};
 static const Key keys[] = {
 	/* MODIFIERS                    KEY                             FUNCTION        ARGUMENTS */
   /* vol keys */
@@ -91,9 +91,10 @@ static const Key keys[] = {
   { 0,                            XF86XK_MonBrightnessDown,       spawn,          {.v = brightdown} },
   /* screenshot keys */
 	{ 0,                            XK_Print,                       spawn,          {.v = screenshot} },
-  /* bash keys */
-  { MOD1,                         XK_F1,                          spawn,          {.v = launchSC } },
-	/* from config.def.h */
+  /* additional dmenus */
+  { MODKEY|ShiftMask,             XK_m,                           spawn,          {.v = misc_launcher } },
+  { MODKEY|ShiftMask,             XK_p,                           spawn,          {.v = options_launcher } },
+	/* from config.def.h */ 
 	{ MODKEY,                       XK_p,                           spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,                           togglebar,      {0} },
