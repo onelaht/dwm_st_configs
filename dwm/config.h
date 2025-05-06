@@ -80,6 +80,8 @@ static const char *screenshot[] = { "scrot","-s", "/home/one/Pictures/Screenshot
 /* custom dmenus */
 static const char *misc_launcher[] = { "/home/one/.dwm/misc_launcher.sh", NULL};
 static const char *options_launcher[] = { "/home/one/.dwm/options_launcher.sh", NULL};
+/* misc */
+static const char *lock[] = {"/home/one/.dwm/options/lock.sh", NULL};
 static const Key keys[] = {
 	/* MODIFIERS                    KEY                             FUNCTION        ARGUMENTS */
   /* vol keys */
@@ -94,6 +96,8 @@ static const Key keys[] = {
   /* additional dmenus */
   { MODKEY|ShiftMask,             XK_m,                           spawn,          {.v = misc_launcher } },
   { MODKEY|ShiftMask,             XK_p,                           spawn,          {.v = options_launcher } },
+  /* misc */
+  { MOD1,                         XK_l,                           spawn,          {.v = lock} },
 	/* from config.def.h */ 
 	{ MODKEY,                       XK_p,                           spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                      spawn,          {.v = termcmd } },
